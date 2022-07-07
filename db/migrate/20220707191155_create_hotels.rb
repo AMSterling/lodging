@@ -3,10 +3,8 @@ class CreateHotels < ActiveRecord::Migration[5.2]
     create_table :hotels do |t|
       t.string :name
       t.string :city
-      t.boolean :book
+      t.boolean :booked
       t.integer :capacity
-
-      t.timestamps 
     end
   end
 end
