@@ -32,16 +32,27 @@ RSpec.describe 'hotel table' do
     expect(page).to_not have_content(marriott.name)
   end
 
-#   As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
-  xit 'lists hotels by most recently and displays when it was created' do
+  it 'lists hotels by most recent and displays when it was created' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
     hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+    ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
 
     visit '/hotels'
 
-    expect(page).to have_content(hyatt.created_at)
+    expect(page).to have_content("Ritz Carlton - Created at:")
+    expect(page).to have_content("Marriott - Created at:")
+    expect(page).to have_content("Hyatt - Created at:")
+
+    within '#hotel-0' do
+      expect(page).to have_content("Ritz Carlton")
+    end
+
+    within '#hotel-1' do
+      expect(page).to have_content("Hyatt")
+    end
+
+    within '#hotel-2' do
+      expect(page).to have_content("Marriott")
+    end
   end
 end

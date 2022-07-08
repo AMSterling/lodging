@@ -1,6 +1,6 @@
 class HotelsController < ApplicationController
   def index
-    @hotels = Hotel.all
+    @hotels = Hotel.all.most_recently_created
   end
 
   def show
