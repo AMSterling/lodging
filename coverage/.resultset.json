@@ -256,6 +256,82 @@
           null
         ]
       },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/features/hotels/rooms/hotel_rooms_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/features/rooms/rooms_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/models/hotel_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/sterling/turing/2mod/projects/lodging/app/models/hotel.rb": {
         "lines": [
           1,
@@ -270,9 +346,37 @@
           null
         ]
       },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/models/room_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
       "/Users/sterling/turing/2mod/projects/lodging/app/models/room.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/sterling/turing/2mod/projects/lodging/app/controllers/hotels_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/sterling/turing/2mod/projects/lodging/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
@@ -287,13 +391,20 @@
           null
         ]
       },
-      "/Users/sterling/turing/2mod/projects/lodging/app/controllers/application_controller.rb": {
+      "/Users/sterling/turing/2mod/projects/lodging/app/controllers/rooms_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1657240902
+    "timestamp": 1657245609
   }
 }

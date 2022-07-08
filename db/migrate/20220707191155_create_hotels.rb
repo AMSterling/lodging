@@ -5,6 +5,8 @@ class CreateHotels < ActiveRecord::Migration[5.2]
       t.string :city
       t.boolean :booked
       t.integer :capacity
+
+      t.timestamps
     end
   end
 end

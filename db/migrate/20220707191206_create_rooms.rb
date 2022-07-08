@@ -5,6 +5,8 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :occupied
       t.integer :guest_count
+
+      t.timestamps
     end
   end
 end
