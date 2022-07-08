@@ -2,6 +2,6 @@
   <% @hotels.each do |hotel| %>
     <h3><%= hotel.name %></h3>
     <p><%= hotel.city %></p>
-    <p><%= hotel.booked %></p>
-    <p><%= hotel.capacity %></p>
+    <p>Booked: <%= hotel.booked %></p>
+    <p>Capacity: <%= hotel.capacity %></p>
   <% end %>
