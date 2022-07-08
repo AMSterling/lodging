@@ -1,11 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'hotel rooms tables' do
-
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes:
-
+RSpec.describe 'hotel rooms table' do
   it 'shows each room and its attributes' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
     standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)

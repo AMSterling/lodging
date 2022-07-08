@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2022_07_07_191206) do
     t.string "city"
     t.boolean "booked"
     t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2022_07_07_191206) do
     t.string "name"
     t.boolean "occupied"
     t.integer "guest_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 

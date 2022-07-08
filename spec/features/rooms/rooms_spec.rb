@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'rooms tables' do
-#   As a visitor
-# When I visit '/child_table_name'
-# Then I see each Child in the system including the Child's attributes:
+RSpec.describe 'rooms table' do
   it 'shows each room and its attributes' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
     standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
@@ -16,10 +13,6 @@ RSpec.describe 'rooms tables' do
     expect(page).to have_content(standard.guest_count)
   end
 
-# As a visitor
-# When I visit '/child_table_name/:id'
-# Then I see the child with that id including the child's attributes:
-
   it 'shows the room with that ID with its attributes' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
     standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
@@ -30,5 +23,6 @@ RSpec.describe 'rooms tables' do
     expect(page).to have_content(standard.name)
     expect(page).to have_content(standard.occupied)
     expect(page).to have_content(standard.guest_count)
+    expect(page).to_not have_content(deluxe.name)
   end
 end
