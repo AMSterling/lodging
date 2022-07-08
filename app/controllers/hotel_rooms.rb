@@ -1,3 +1,0 @@
-class HotelRooms < ApplicationController
-
-end 
