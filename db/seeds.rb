@@ -6,8 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Hotel.destroy_all
 Room.destroy_all
+Hotel.destroy_all
 
   marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
+
+  standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
+  deluxe = marriott.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 2)
+
   hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+
+  king = hyatt.rooms.create!(name: 'King', occupied: true, guest_count: 1)
+  suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)

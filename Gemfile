@@ -38,7 +38,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
+  gem 'launchy' #save_and_open_page
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 5.0'
 end

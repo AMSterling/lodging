@@ -5,11 +5,13 @@ RSpec.describe Hotel, type: :model do
 
   describe 'instance methods' do
     describe 'most_recently_created' do
-      xit 'lists hotels by most recent and displays when it was created' do
+      it 'lists hotels by most recent and displays when it was created' do
         marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
         hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+        hotels = Hotel.all
 
-        expect()
+        expect(hotels.most_recently_created.first).to eq(hyatt)
+        expect(hotels.most_recently_created.last).to eq(marriott)
       end
     end
   end

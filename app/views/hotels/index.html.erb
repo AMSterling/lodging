@@ -1,7 +1,9 @@
-<h1>Hotels</h>
-  <% @hotels.each do |hotel| %>
-    <h3><%= hotel.name %></h3><a><%= hotel.created_at %></a>
-    <p><%= hotel.city %></p>
+<h1>Hotels</h1>
+  <% @hotels.each_with_index do |hotel, index| %>
+    <div id="hotel-<%= index %>">
+    <h3><%= hotel.name %> - <time> Created at: <%= hotel.created_at %></time></h3>
+    <!-- <p>City: <%= hotel.city %></p>
     <p>Booked: <%= hotel.booked %></p>
-    <p>Capacity: <%= hotel.capacity %></p>
+    <p>Capacity: <%= hotel.capacity %></p> -->
+    </div>
   <% end %>
