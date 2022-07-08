@@ -1,0 +1,6 @@
+<h3>Rooms</h3>
+<% @rooms.each do |room| %>
+  <h5><%= room.name %></h5>
+  <p><%= room.occupied %></p>
+  <p><%= room.guest_count %></p>
+<% end %>
