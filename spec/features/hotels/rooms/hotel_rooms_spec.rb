@@ -123,7 +123,7 @@ RSpec.describe 'hotel rooms table' do
     executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
 
     visit "/hotels/#{marriott.id}/rooms"
-    save_and_open_page
+
     click_on 'Room Index'
 
     expect(current_path).to eq("/rooms")

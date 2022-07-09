@@ -142,4 +142,47 @@ RSpec.describe 'hotel table' do
 
     expect(current_path).to eq("/rooms")
   end
+
+  it 'has a Room Index link specific to the hotel' do
+    marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
+    budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
+    standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
+    double = marriott.rooms.create!(name: 'Double', occupied: true, guest_count: 2)
+    hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+    king = hyatt.rooms.create!(name: 'King', occupied: true, guest_count: 1)
+    suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
+    ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
+    deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
+    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+
+    visit "/hotels/#{marriott.id}"
+
+    expect(page).to have_link('Marriott Rooms')
+
+    visit "/hotels/#{hyatt.id}"
+
+    expect(page).to have_link('Hyatt Rooms')
+
+    visit "/hotels/#{ritz.id}"
+    
+    expect(page).to have_link('Ritz Carlton Rooms')
+  end
+
+  it 'takes you to the hotels rooms when you click the link' do
+    marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
+    budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
+    standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
+    double = marriott.rooms.create!(name: 'Double', occupied: true, guest_count: 2)
+    hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+    king = hyatt.rooms.create!(name: 'King', occupied: true, guest_count: 1)
+    suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
+    ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
+    deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
+    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+
+    visit "/hotels/#{marriott.id}"
+    click_on 'Marriott Rooms'
+
+    expect(current_path).to eq("/hotels/#{marriott.id}/rooms")
+  end
 end
