@@ -3,8 +3,8 @@ class CreateRooms < ActiveRecord::Migration[5.2]
     create_table :rooms do |t|
       t.references :hotel, foreign_key: true
       t.string :name
-      t.boolean :occupied
-      t.integer :guest_count
+      t.boolean :occupied, default: false
+      t.integer :guest_count, default: 0
 
       t.timestamps
     end
