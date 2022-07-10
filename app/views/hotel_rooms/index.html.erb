@@ -5,3 +5,4 @@
   <p>Occupied: <%= room.occupied %></p>
   <p>Number of Guests: <%= room.guest_count %></p>
 <% end %>
+<%= link_to 'New Room', "/hotels/#{@hotel.id}/new" %>
