@@ -71,6 +71,10 @@ RSpec.describe 'hotel table' do
     visit "/hotels/#{marriott.id}"
 
     expect(page).to have_content("Number of rooms: 3")
+
+    visit "/hotels/#{hyatt.id}"
+
+    expect(page).to have_content("Number of rooms: 2")
   end
 
   it 'has a Hotel Index link on every page' do
@@ -164,7 +168,7 @@ RSpec.describe 'hotel table' do
     expect(page).to have_link('Hyatt Rooms')
 
     visit "/hotels/#{ritz.id}"
-    
+
     expect(page).to have_link('Ritz Carlton Rooms')
   end
 

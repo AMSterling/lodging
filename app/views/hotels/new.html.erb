@@ -1,0 +1,11 @@
+<%= form_with url: '/hotels', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br/>
+  <%= form.label :city %>
+  <%= form.text_field :city %><br/>
+  <%= form.label :booked %>
+  <%= form.check_box :booked %><br/>
+  <%= form.label :capacity %>
+  <%= form.text_field :capacity %><br/>
+  <%= form.submit 'Create Hotel'%>
+<% end %>

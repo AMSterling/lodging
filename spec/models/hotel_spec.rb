@@ -38,10 +38,6 @@ RSpec.describe Hotel, type: :model do
           deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
           executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
 
-          # marriott_rooms = Room.where(hotel_id: marriott.id)
-          # hyatt_rooms = Room.where(hotel_id: hyatt.id)
-          # ritz_rooms = Room.where(hotel_id: ritz.id)
-
           expect(marriott.room_count).to eq 3
           expect(hyatt.room_count).to eq 2
           expect(ritz.room_count).to eq 2
@@ -49,9 +45,4 @@ RSpec.describe Hotel, type: :model do
       end
     end
   end
-  #   As a visitor
-  # When I visit the parent index,
-  # I see that records are ordered by most recently created first
-  # And next to each of the records I see when it was created
-
 end
