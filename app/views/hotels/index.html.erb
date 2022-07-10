@@ -1,11 +1,13 @@
-<a href="/hotels">Hotel Index</a><br/>
-<a href="/rooms">Room Index</a>
+<a href="/hotels">Hotel Index</a> <a href="/rooms">Room Index</a>
 <h1>Hotels</h1>
   <% @hotels.each_with_index do |hotel, index| %>
     <div id="hotel-<%= index %>">
-    <h3><%= hotel.name %> - <time> Created at: <%= hotel.created_at %></time></h3>
+    <h3>
+      <%= hotel.name %> - <time> Created at: <%= hotel.created_at %></time>
+    </h3>
     <p>City: <%= hotel.city %></p>
     <p>Booked: <%= hotel.booked %></p>
     <p>Capacity: <%= hotel.capacity %></p>
     </div>
   <% end %>
+<%= link_to 'New Hotel', '/hotels/new' %>

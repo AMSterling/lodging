@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/hotels', to: 'hotels#index'
+  get '/hotels/new', to: 'hotels#new'
+  post '/hotels', to: 'hotels#create'
   get '/hotels/:id', to: 'hotels#show'
   get '/rooms', to: 'rooms#index'
   get '/rooms/:id', to: 'rooms#show'

@@ -1,7 +1,6 @@
-<a href="/hotels">Hotel Index</a><br/>
-<a href="/rooms">Room Index</a><br/>
-<p><%= link_to "#{@hotel.name} Rooms", "/hotels/#{@hotel.id}/rooms?sort=alpha"%></p>
+<a href="/hotels">Hotel Index</a>  <a href="/rooms">Room Index</a><br/>
 <h1><%= @hotel.name %></h1>
+<p><%= link_to "#{@hotel.name} Rooms", "/hotels/#{@hotel.id}/rooms?sort=alpha"%></p>
 <p>City: <%= @hotel.city %></p>
 <p>Booked: <%= @hotel.booked %></p>
 <p>Capacity: <%= @hotel.capacity %></p>
