@@ -4,7 +4,7 @@
   <%= form.label :city %>
   <%= form.text_field :city %><br/>
   <%= form.label :booked %>
-  <%= form.check_box :booked %><br/>
+  <%= form.select :booked, options_for_select([false, true]) %><br/>
   <%= form.label :capacity %>
   <%= form.text_field :capacity %><br/>
   <%= form.submit 'Create Hotel'%>

@@ -13,9 +13,9 @@ class HotelRoomsController < ApplicationController
     @hotel.rooms.create(room_params)
     redirect_to "/hotels/#{@hotel.id}/rooms"
   end
-end
 
- private
+private
   def room_params
-    params.permit(:name, :occupied, :guest_count)
+   params.permit(:name, :occupied, :guest_count)
   end
+end

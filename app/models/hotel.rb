@@ -2,7 +2,7 @@ class Hotel < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :city
   validates :booked, inclusion:[true, false]
-  validates_presence_of :capacity
+  validates_numericality_of :capacity
   has_many :rooms
 
   def self.most_recently_created

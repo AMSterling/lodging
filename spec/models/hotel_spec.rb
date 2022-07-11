@@ -6,7 +6,7 @@ RSpec.describe Hotel, type: :model do
     it { should validate_presence_of :city }
     it { should allow_value(true).for(:booked) }
     it { should allow_value(false).for(:booked) }
-    it { should validate_presence_of :capacity }
+    it { should validate_numericality_of :capacity }
   end
 
   describe 'relationships' do
@@ -36,7 +36,7 @@ RSpec.describe Hotel, type: :model do
           suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
           ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
           deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-          executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+          executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
           expect(marriott.room_count).to eq 3
           expect(hyatt.room_count).to eq 2

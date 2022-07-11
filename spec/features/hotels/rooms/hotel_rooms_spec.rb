@@ -11,7 +11,7 @@ RSpec.describe 'hotel rooms table' do
     suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
     ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+    executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/hotels/#{marriott.id}/rooms"
 
@@ -68,7 +68,7 @@ RSpec.describe 'hotel rooms table' do
     suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
     ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+    executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/hotels/#{marriott.id}/rooms"
 
@@ -85,7 +85,7 @@ RSpec.describe 'hotel rooms table' do
     suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
     ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+    executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/hotels/#{marriott.id}/rooms"
     click_on 'Hotel Index'
@@ -103,7 +103,7 @@ RSpec.describe 'hotel rooms table' do
     suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
     ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+    executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/hotels/#{marriott.id}/rooms"
 
@@ -120,7 +120,7 @@ RSpec.describe 'hotel rooms table' do
     suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
     ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-    executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+    executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/hotels/#{marriott.id}/rooms"
 
@@ -140,7 +140,7 @@ RSpec.describe 'hotel rooms table' do
       suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
       ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
       deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-      executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+      executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
       visit "/hotels/#{marriott.id}/rooms"
 
@@ -161,12 +161,12 @@ RSpec.describe 'hotel rooms table' do
         suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
         ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
         deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
-        executive = ritz.rooms.create!(name: 'executive', occupied: false, guest_count: 6)
+        executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
         visit "/hotels/#{marriott.id}/new"
 
         fill_in('Name', with: 'Bargain')
-        check('Occupied', unchecked: true, checked: false)
+        select(false, from:'Occupied')
         fill_in('Guest count', with: 5)
         click_button('Create Room')
         new_room_id = Room.last.id
