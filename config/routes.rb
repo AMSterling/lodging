@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/hotels', to: 'hotels#create'
   get '/hotels/:id', to: 'hotels#show'
   get '/rooms', to: 'rooms#index'
+  get '/rooms/:id/edit', to: 'rooms#edit'
+  patch '/rooms/:id', to: 'rooms#update'
   get '/hotels/:hotel_id/new', to: 'hotel_rooms#new'
   post '/hotels/:hotel_id', to: 'hotel_rooms#create'
   get '/rooms/:id', to: 'rooms#show'
