@@ -2,7 +2,9 @@
 <a href="/rooms">Room Index</a>
 <h3>Rooms</h3>
 <% @rooms.each do |room| %>
+<% if room.occupied? %>
   <h4><%= room.name %></h4>
   <p>Occupied: <%= room.occupied %></p>
   <p>Number of Guests: <%= room.guest_count %></p>
+  <% end %>
 <% end %>

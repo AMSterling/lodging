@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'rooms table' do
   it 'shows each room and its attributes' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
-    standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
+    standard = marriott.rooms.create!(name: 'Standard', occupied: true, guest_count: 0)
     deluxe = marriott.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 2)
 
     visit '/rooms'
@@ -142,7 +142,7 @@ RSpec.describe 'rooms table' do
   end
 
   describe 'only show occupied rooms' do
-    xit ' only shows rooms where occupied value is true' do
+    it ' only shows rooms where occupied value is true' do
       marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
       budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
       standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
