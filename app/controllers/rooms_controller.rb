@@ -16,9 +16,9 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
   end
-end
 
 private
-def room_params
-  params.permit(:name, :occupied, :guest_count)
+  def room_params
+    params.permit(:name, :occupied, :guest_count)
+  end
 end

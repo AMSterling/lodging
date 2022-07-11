@@ -2,7 +2,7 @@
   <%= form.label :name %>
   <%= form.text_field :name %><br/>
   <%= form.label :occupied %>
-  <%= form.check_box :occupied %><br/>
+  <%= form.select :occupied, options_for_select([false, true]) %><br/>
   <%= form.label :guest_count %>
   <%= form.text_field :guest_count %><br/>
   <%= form.submit 'Update Room'%>
