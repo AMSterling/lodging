@@ -129,7 +129,7 @@ RSpec.describe 'rooms table' do
       expect(page).to have_content('Buget')
 
       click_button "Edit #{room.name}"
-      save_and_open_page
+
       fill_in('Name', with: 'Budget')
       select(false, from:'Occupied')
       fill_in('Guest count', with: 1)
@@ -138,12 +138,11 @@ RSpec.describe 'rooms table' do
 
       expect(current_path).to eq("/rooms/#{room.id}")
       expect(page).to have_content('Budget')
-      
     end
   end
 
   describe 'only show occupied rooms' do
-    it ' only shows rooms where occupied value is true' do
+    xit ' only shows rooms where occupied value is true' do
       marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
       budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
       standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)

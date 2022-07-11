@@ -11,6 +11,16 @@ class HotelsController < ApplicationController
     redirect_to '/hotels'
   end
 
+  def edit
+    @hotel = Hotel.find(params[:id])
+  end
+
+  def update
+    hotel = Hotel.find(params[:id])
+    hotel.update(hotel_params)
+    redirect_to "/hotels/#{hotel.id}"
+  end
+
   def show
     @hotel = Hotel.find(params[:id])
   end
