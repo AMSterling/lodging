@@ -5,6 +5,7 @@
     <h3>
       <%= hotel.name %> - <small> Created at: <%= hotel.created_at %></small>
       <%= button_to "Edit #{hotel.name}", "/hotels/#{hotel.id}/edit", method: :get %>
+      <%= button_to "Delete #{hotel.name}", "/hotels/#{hotel.id}", method: :delete %>
     </h3>
     <p>City: <%= hotel.city %></p>
     <p>Booked: <%= hotel.booked %></p>
