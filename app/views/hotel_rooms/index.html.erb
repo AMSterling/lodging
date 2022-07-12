@@ -2,7 +2,7 @@
 <br/>
 <%= form_with url: "/hotels/#{@hotel.id}/rooms", method: :get do |form| %>
   <%= form.label :guest_count, "Only return records with more than" %>
-  <%= form.text_field :rooms_with_more_than, value: 0 %>
+  <%= form.text_field :rooms_with_more_than %> 
   <%= form.submit 'Search' %>
 <% end %>
 <br/>
