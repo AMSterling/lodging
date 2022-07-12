@@ -21,3 +21,5 @@ Hotel.destroy_all
   ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
   deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
   executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
+
+  wyndam = Hotel.create!(name: 'Wyndam', city: 'Chicago', booked: false, capacity: 540)
