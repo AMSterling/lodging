@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'destroying a hotel' do
-  it 'can delete the hotel from its page' do
+RSpec.describe 'destroying a room' do
+  it 'can delete the room from its page' do
     marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
     budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
     standard = marriott.rooms.create!(name: 'Standard', occupied: false, guest_count: 0)
@@ -13,12 +13,13 @@ RSpec.describe 'destroying a hotel' do
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
     executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
     wyndam = Hotel.create!(name: 'Wyndam', city: 'Chicago', booked: false, capacity: 540)
+    premiere = wyndam.rooms.create!(name: 'Premiere', occupied: true, guest_count: 1)
 
-    visit "/hotels/#{wyndam.id}"
+    visit "/rooms/#{premiere.id}"
 
     click_button 'Delete'
 
-    expect(current_path).to eq('/hotels')
-    expect(page).to_not have_content(wyndam.name)
+    expect(current_path).to eq('/rooms')
+    expect(page).to_not have_content(premiere.name)
   end
 end

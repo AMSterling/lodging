@@ -3,3 +3,5 @@
 <p>Occupied: <%= @room.occupied %></p>
 <p>Number of Guests: <%= @room.guest_count %></p>
 <%= button_to "Edit #{@room.name}", "/rooms/#{@room.id}/edit", method: :get %>
+<br/>
+<%= button_to "Delete", "/rooms/#{@room.id}", method: :delete %>

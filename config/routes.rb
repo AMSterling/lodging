@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get '/hotels/:id', to: 'hotels#show'
   delete '/hotels/:id' , to: 'hotels#destroy'
   get '/rooms', to: 'rooms#index'
-  get '/rooms/:id/edit', to: 'rooms#edit'
-  patch '/rooms/:id', to: 'rooms#update'
   get '/hotels/:hotel_id/new', to: 'hotel_rooms#new'
   post '/hotels/:hotel_id', to: 'hotel_rooms#create'
+  get '/rooms/:id/edit', to: 'rooms#edit'
+  patch '/rooms/:id', to: 'rooms#update'
+  delete '/rooms/:id', to: 'rooms#destroy'
   get '/rooms/:id', to: 'rooms#show'
   get '/hotels/:hotel_id/rooms', to: 'hotel_rooms#index'
 end
