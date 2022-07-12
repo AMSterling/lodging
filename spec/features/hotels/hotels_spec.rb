@@ -44,15 +44,15 @@ RSpec.describe 'hotel table' do
     expect(page).to have_content("Hyatt - Created at:")
 
     within '#hotel-0' do
-      expect(page).to have_content("Ritz Carlton")
+      expect(page).to have_content('Ritz Carlton')
     end
 
     within '#hotel-1' do
-      expect(page).to have_content("Hyatt")
+      expect(page).to have_content('Hyatt')
     end
 
     within '#hotel-2' do
-      expect(page).to have_content("Marriott")
+      expect(page).to have_content('Marriott')
     end
   end
 

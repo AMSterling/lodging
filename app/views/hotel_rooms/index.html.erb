@@ -1,8 +1,12 @@
 <a href="/hotels">Hotel Index</a><br/>
 <a href="/rooms">Room Index</a>
-<% @rooms.each do |room| %>
-  <h3><%= room.name %></h3>
-  <p>Occupied: <%= room.occupied %></p>
-  <p>Number of Guests: <%= room.guest_count %></p>
+<% @rooms.each_with_index do |room, index| %>
+  <div id="room-<%= index %>">
+    <h3><%= room.name %></h3>
+    <p>Occupied: <%= room.occupied %></p>
+    <p>Number of Guests: <%= room.guest_count %></p>
+  </div>
 <% end %>
-<%= link_to 'New Room', "/hotels/#{@hotel.id}/new" %>
+<%= link_to 'Sort Rooms Alphabetically', "/hotels/#{@hotel.id}/rooms?sort=alpha"%><br/>
+<br/>
+<%= link_to 'New Room', "/hotels/#{@hotel.id}/new" %><br/>
