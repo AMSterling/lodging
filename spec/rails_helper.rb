@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'simplecov'
 SimpleCov.start
+# open coverage/index.html
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -70,4 +71,4 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
-end 
+end

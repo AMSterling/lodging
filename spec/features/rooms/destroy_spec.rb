@@ -20,6 +20,7 @@ RSpec.describe 'destroying a room' do
     click_button 'Delete'
 
     expect(current_path).to eq('/rooms')
+    expect(page).to have_content(budget.name)
     expect(page).to_not have_content(premiere.name)
   end
 end
