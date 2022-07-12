@@ -18,7 +18,7 @@ RSpec.describe 'new hotel creation' do
     fill_in('Name', with: 'Wyndham')
     fill_in('City', with: 'Chicago')
     select(false, from:'Booked')
-    fill_in('Capacity', with: 460)
+    fill_in('Capacity', with: 540)
 
     click_button('Create Hotel')
 

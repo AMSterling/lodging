@@ -180,7 +180,7 @@ RSpec.describe 'rooms table' do
       executive = ritz.rooms.create!(name: 'Executive', occupied: true, guest_count: 0)
 
       visit '/rooms'
-      save_and_open_page
+      
       expect(page).to have_button("Edit #{budget.name}")
       expect(page).to have_button("Edit #{standard.name}")
       expect(page).to have_button("Edit #{double.name}")

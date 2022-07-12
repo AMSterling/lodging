@@ -6,3 +6,5 @@
 <p>Capacity: <%= @hotel.capacity %></p>
 <p>Number of rooms: <%= @hotel.room_count %></p>
 <%= button_to "Edit #{@hotel.name}", "/hotels/#{@hotel.id}/edit", method: :get %>
+<br/>
+<%= button_to "Delete", "/hotels/#{@hotel.id}", method: :delete %>

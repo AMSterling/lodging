@@ -255,12 +255,50 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
       "/Users/sterling/turing/2mod/projects/lodging/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/features/hotels/edit_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -926,7 +964,7 @@
           1,
           null,
           1,
-          1,
+          null,
           1,
           1,
           1,
@@ -1001,11 +1039,11 @@
           1,
           null,
           1,
-          10,
+          11,
           null,
           null,
           1,
-          18,
+          19,
           null,
           null
         ]
@@ -1079,7 +1117,7 @@
         "lines": [
           1,
           1,
-          8,
+          9,
           null,
           null,
           1,
@@ -1101,7 +1139,13 @@
           null,
           null,
           1,
-          15,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          16,
           null,
           null,
           1,
@@ -1175,6 +1219,6 @@
         ]
       }
     },
-    "timestamp": 1657589709
+    "timestamp": 1657591312
   }
 }
