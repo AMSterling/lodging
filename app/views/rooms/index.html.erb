@@ -1,9 +1,11 @@
-<a href="/hotels">Hotel Index</a><br/>
-<a href="/rooms">Room Index</a>
-<h3>Rooms</h3>
+<a href="/hotels">Hotel Index</a> <a href="/rooms">Room Index</a>
+<h1>Rooms</h1>
 <% @rooms.each do |room| %>
 <% if room.occupied? %>
-  <h4><%= room.name %></h4>
+  <h3>
+    <%= room.name %>
+    <%= button_to "Edit #{room.name}", "/rooms/#{room.id}/edit", method: :get %>
+  </h3>
   <p>Occupied: <%= room.occupied %></p>
   <p>Number of Guests: <%= room.guest_count %></p>
   <% end %>
