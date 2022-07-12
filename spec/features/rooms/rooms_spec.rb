@@ -93,7 +93,7 @@ RSpec.describe 'rooms table' do
     executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/rooms/#{budget.id}"
-    
+
     click_on 'Hotel Index'
 
     expect(current_path).to eq("/hotels")
@@ -182,6 +182,31 @@ RSpec.describe 'rooms table' do
       expect(page).to have_button("Edit #{suite.name}")
       expect(page).to have_button("Edit #{deluxe.name}")
       expect(page).to have_button("Edit #{executive.name}")
+    end
+  end
+
+  describe 'delete room from index' do
+    it 'has a link next to each room in the index to delete the room' do
+      marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
+      budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
+      standard = marriott.rooms.create!(name: 'Standard', occupied: true, guest_count: 0)
+      double = marriott.rooms.create!(name: 'Double', occupied: true, guest_count: 2)
+      hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+      king = hyatt.rooms.create!(name: 'King', occupied: true, guest_count: 1)
+      suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
+      ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
+      deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
+      executive = ritz.rooms.create!(name: 'Executive', occupied: true, guest_count: 0)
+
+      visit '/rooms'
+
+      expect(page).to have_button("Delete #{budget.name}")
+      expect(page).to have_button("Delete #{standard.name}")
+      expect(page).to have_button("Delete #{double.name}")
+      expect(page).to have_button("Delete #{king.name}")
+      expect(page).to have_button("Delete #{suite.name}")
+      expect(page).to have_button("Delete #{deluxe.name}")
+      expect(page).to have_button("Delete #{executive.name}")
     end
   end
 end
