@@ -3,6 +3,8 @@ class HotelRoomsController < ApplicationController
     @hotel = Hotel.find(params[:hotel_id])
     if params[:sort] == "alpha"
       @rooms = @hotel.rooms.alphabetical
+    elsif params[:rooms_with_more_than]
+      @rooms = @hotel.rooms_with_more_than(params[:rooms_with_more_than])
     else
       @rooms = @hotel.rooms
     end

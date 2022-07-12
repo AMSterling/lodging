@@ -93,6 +93,7 @@ RSpec.describe 'rooms table' do
     executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/rooms/#{budget.id}"
+    
     click_on 'Hotel Index'
 
     expect(current_path).to eq("/hotels")
@@ -128,6 +129,7 @@ RSpec.describe 'rooms table' do
     executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
     visit "/rooms/#{budget.id}"
+
     click_on 'Room Index'
 
     expect(current_path).to eq("/rooms")

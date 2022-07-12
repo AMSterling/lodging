@@ -27,13 +27,13 @@ RSpec.describe Room, type: :model do
         executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
         rooms = Room.all
 
-        expect(budget.occupied?).to be true
-        expect(double.occupied?).to be true
-        expect(king.occupied?).to be true
-        expect(suite.occupied?).to be true
-        expect(deluxe.occupied?).to be true
-        expect(standard.occupied?).to be false
-        expect(executive.occupied?).to be false
+        expect(budget.occupied).to be true
+        expect(double.occupied).to be true
+        expect(king.occupied).to be true
+        expect(suite.occupied).to be true
+        expect(deluxe.occupied).to be true
+        expect(standard.occupied).to be false
+        expect(executive.occupied).to be false
       end
     end
   end
