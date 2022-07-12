@@ -256,6 +256,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -780,6 +781,35 @@
           null
         ]
       },
+      "/Users/sterling/turing/2mod/projects/lodging/spec/features/rooms/destroy_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/sterling/turing/2mod/projects/lodging/spec/features/rooms/rooms_spec.rb": {
         "lines": [
           1,
@@ -1165,7 +1195,7 @@
         "lines": [
           1,
           1,
-          6,
+          7,
           null,
           null,
           1,
@@ -1179,7 +1209,13 @@
           null,
           null,
           1,
-          8,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          9,
           null,
           null,
           1,
@@ -1219,6 +1255,6 @@
         ]
       }
     },
-    "timestamp": 1657591312
+    "timestamp": 1657591944
   }
 }
