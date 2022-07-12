@@ -165,4 +165,29 @@ RSpec.describe 'rooms table' do
       expect(page).to_not have_content('Executive')
     end
   end
+
+  describe 'edit room from index' do
+    it 'has a link next to each room in the index to edit the room' do
+      marriott = Hotel.create!(name: 'Marriott', city: 'Jacksonville', booked: false, capacity: 400)
+      budget = marriott.rooms.create!(name: 'Budget', occupied: true, guest_count: 1)
+      standard = marriott.rooms.create!(name: 'Standard', occupied: true, guest_count: 0)
+      double = marriott.rooms.create!(name: 'Double', occupied: true, guest_count: 2)
+      hyatt = Hotel.create!(name: 'Hyatt', city: 'Denver', booked: false, capacity: 480)
+      king = hyatt.rooms.create!(name: 'King', occupied: true, guest_count: 1)
+      suite = hyatt.rooms.create!(name: 'Suite', occupied: true, guest_count: 4)
+      ritz = Hotel.create!(name: 'Ritz Carlton', city: 'Cleveland', booked: false, capacity: 600)
+      deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
+      executive = ritz.rooms.create!(name: 'Executive', occupied: true, guest_count: 0)
+
+      visit '/rooms'
+      save_and_open_page
+      expect(page).to have_button("Edit #{budget.name}")
+      expect(page).to have_button("Edit #{standard.name}")
+      expect(page).to have_button("Edit #{double.name}")
+      expect(page).to have_button("Edit #{king.name}")
+      expect(page).to have_button("Edit #{suite.name}")
+      expect(page).to have_button("Edit #{deluxe.name}")
+      expect(page).to have_button("Edit #{executive.name}")
+    end
+  end
 end

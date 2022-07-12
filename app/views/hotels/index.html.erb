@@ -3,7 +3,8 @@
   <% @hotels.each_with_index do |hotel, index| %>
     <div id="hotel-<%= index %>">
     <h3>
-      <%= hotel.name %> - <time> Created at: <%= hotel.created_at %></time>
+      <%= hotel.name %> - <small> Created at: <%= hotel.created_at %></small>
+      <%= button_to "Edit #{hotel.name}", "/hotels/#{hotel.id}/edit", method: :get %>
     </h3>
     <p>City: <%= hotel.city %></p>
     <p>Booked: <%= hotel.booked %></p>

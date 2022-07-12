@@ -1,5 +1,4 @@
-<a href="/hotels">Hotel Index</a><br/>
-<a href="/rooms">Room Index</a>
+<a href="/hotels">Hotel Index</a> <a href="/rooms">Room Index</a>
 <% @rooms.each_with_index do |room, index| %>
   <div id="room-<%= index %>">
     <h3><%= room.name %></h3>
