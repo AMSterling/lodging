@@ -199,7 +199,7 @@ RSpec.describe 'rooms table' do
       executive = ritz.rooms.create!(name: 'Executive', occupied: true, guest_count: 0)
 
       visit '/rooms'
-
+      
       expect(page).to have_button("Delete #{budget.name}")
       expect(page).to have_button("Delete #{standard.name}")
       expect(page).to have_button("Delete #{double.name}")
