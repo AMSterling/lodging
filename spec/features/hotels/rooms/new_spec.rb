@@ -34,7 +34,7 @@ RSpec.describe 'new hotel room creation' do
     deluxe = ritz.rooms.create!(name: 'Deluxe', occupied: true, guest_count: 3)
     executive = ritz.rooms.create!(name: 'Executive', occupied: false, guest_count: 0)
 
-    visit "/hotels/#{marriott.id}/new"
+    visit "/hotels/#{marriott.id}/rooms/new"
 
     fill_in('Name', with: 'Bargain')
     select(false, from:'Occupied')
@@ -44,5 +44,5 @@ RSpec.describe 'new hotel room creation' do
 
     expect(current_path).to eq("/hotels/#{marriott.id}/rooms")
     expect(page).to have_content('Bargain')
-  end 
+  end
 end

@@ -22,6 +22,6 @@ class HotelRoomsController < ApplicationController
 
 private
   def room_params
-   params.permit(:name, :occupied, :guest_count)
+     params.permit(:name, :occupied, :guest_count)
   end
 end

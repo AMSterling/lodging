@@ -1,11 +1,11 @@
 <nav><a href="/hotels">Hotel Index</a> <a href="/rooms">Room Index</a></nav>
 <br/>
-<%= form_with url: "/hotels/#{@hotel.id}/rooms", method: :get do |form| %>
+<%= form_with url: "/hotels/#{@hotel.id}/rooms", method: :get, local: true do |form| %>
   <%= form.label :guest_count, "Only return records with more than" %>
-  <%= form.text_field :rooms_with_more_than %> 
+  <%= form.text_field :rooms_with_more_than %>
   <%= form.submit 'Search' %>
 <% end %>
-<br/>
+<br/>  
 <% @rooms.each_with_index do |room, index| %>
   <div id="room-<%= index %>">
     <h3><%= room.name %></h3>

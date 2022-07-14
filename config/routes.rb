@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   delete '/rooms/:id', to: 'rooms#destroy'
   get '/rooms/:id', to: 'rooms#show'
   get '/hotels/:hotel_id/rooms', to: 'hotel_rooms#index'
+  get '/hotels/:hotel_id/rooms/new', to: 'hotel_rooms#new'
 end
